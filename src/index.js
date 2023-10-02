@@ -50,6 +50,11 @@ function markupCatInfo(catData) {
 }
 
 function markingCatInfo(data) {
+  if (!data) {
+    catInfo.innerHTML = '';
+    error();
+    errorMsg.classList.remove('hidden');
+  }
   return `
     <img src="${data.url}" alt="${data.breeds[0].name}">
     <div class="box-info">
